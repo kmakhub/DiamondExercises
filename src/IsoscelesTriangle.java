@@ -8,35 +8,35 @@ public class IsoscelesTriangle {
         CreateIsoscelesTriangle(3);
 
     }
-
-    public static String printAsterisk(int num){
+    public static void printAsterisk(int num){
         String str = "";
         for (int i = 0; i < num; i++)
         {
             str += "*";
         }
-       return str;
+        System.out.print( str );
     }
 
-    public static String printEmptySpace(int num){
+    public static void printEmptySpace(int num){
         String str = "";
         for (int i = 0; i < num; i++)
         {
             str += " ";
         }
-        return str;
+        System.out.print( str );
     }
 
     private static void CreateIsoscelesTriangle(int n) {
 
-        int i = n-1, j = 1;
-
-            while(i >= 0)
-            {
-                System.out.print(printEmptySpace(i) + printAsterisk(j) + printEmptySpace(i));
+        for (int i = 1; i < n*2; i+=2 ) {
+            for (int j = n - 1; j >= 0; j--) {
+                printEmptySpace(j);
+                printAsterisk(i);
+                printEmptySpace(j);
                 System.out.println();
-                i--;j +=2;
+                i += 2;
             }
         }
+    }
 
 }
